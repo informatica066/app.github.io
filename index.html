@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>App Mayores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=5">
+    <meta name="theme-color" content="#1c1c1c">
+</head>
+<body>
+    <div class="device-wrapper">
+        <div class="screen">
+            <!-- Barra de estado -->
+            <div class="status-bar">
+                <div class="time" id="clock">--:-- --</div>
+                <div class="dynamic-island"></div>
+                <div class="status-icons">
+                    <span class="battery-pct">68%</span>
+                    <svg class="icon-small" viewBox="0 0 640 512" fill="currentColor"><path d="M144 384H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h112c17.7 0 32-14.3 32-32s-14.3-32-32-32zM336 288H224c-17.7 0-32 14.3-32 32s14.3 32 32 32h112c17.7 0 32-14.3 32-32s-14.3-32-32-32zM528 192H416c-17.7 0-32 14.3-32 32s14.3 32 32 32h112c17.7 0 32-14.3 32-32s-14.3-32-32-32z"/></svg>
+                    <svg class="icon-small" viewBox="0 0 576 512" fill="currentColor"><path d="M464 160c8.8 0 16 7.2 16 16V336c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16H464zM48 96C21.5 96 0 117.5 0 144V368c0 26.5 21.5 48 48 48H464c26.5 0 48-21.5 48-48V336h16c26.5 0 48-21.5 48-48V224c0-26.5-21.5-48-48-48H512V144c0-26.5-21.5-48-48-48H48z"/></svg>
+                </div>
+            </div>
+
+            <!-- Información (Fecha y Ubicación) -->
+            <div class="header-info">
+                <div class="date" id="date-display">Cargando fecha...</div>
+                <div class="location">
+                    <svg class="icon-location" viewBox="0 0 576 512" fill="currentColor"><path d="M464 160c8.8 0 16 7.2 16 16V336c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16H464zM48 96C21.5 96 0 117.5 0 144V368c0 26.5 21.5 48 48 48H464c26.5 0 48-21.5 48-48V336h16c26.5 0 48-21.5 48-48V224c0-26.5-21.5-48-48-48H512V144c0-26.5-21.5-48-48-48H48z"/></svg>
+                    <span id="location-display">Algeciras, España</span>
+                </div>
+            </div>
+
+            <!-- Área de Botones Principal -->
+            <div class="grid-container">
+                <!-- Botón Llamar -->
+                <button class="grid-btn btn-llamar" id="btn-llamar">
+                    <span class="btn-title">LLAMAR</span>
+                    <div class="icon-container">
+                        <svg viewBox="0 0 512 512" fill="currentColor"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                    </div>
+                    <span class="btn-subtitle">FAMILIARES</span>
+                </button>
+
+                <!-- Botón WhatsApp -->
+                <button class="grid-btn btn-whatsapp" id="btn-whatsapp">
+                    <span class="btn-title">WhatsApp</span>
+                    <div class="icon-container">
+                        <svg viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                    </div>
+                    <span class="btn-subtitle">VOZ</span>
+                </button>
+
+                <!-- Botón Videollamada -->
+                <button class="grid-btn btn-videollamada" id="btn-videollamada">
+                    <span class="btn-title">VIDEOLLAMADA</span>
+                    <div class="icon-container">
+                        <svg viewBox="0 0 576 512" fill="currentColor"><path d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V174.9l14.2-9.5 96-64c9.8-6.5 22.5-7.2 32.9-1.6zM224 224a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM100.7 335.3c-1.5 8.1 4.8 15.7 13.1 15.7h156.4c8.2 0 14.6-7.5 13.1-15.7C275.5 292.1 236.4 256 192 256s-83.5 36.1-91.3 79.3z"/></svg>
+                    </div>
+                    <span class="btn-subtitle">FAMILIARES</span>
+                </button>
+
+                <!-- Botón GPS -->
+                <button class="grid-btn btn-gps" id="btn-gps">
+                    <span class="btn-title">GPS</span>
+                    <div class="icon-container">
+                        <svg viewBox="0 0 384 512" fill="currentColor"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+                    </div>
+                    <span class="btn-subtitle">LOCALIZACIÓN</span>
+                </button>
+
+                <!-- Botón SOS Central -->
+                <div class="sos-container">
+                    <button class="btn-sos" id="btn-sos">
+                        <div class="sos-waves wave-1"></div>
+                        <div class="sos-waves wave-2"></div>
+                        <div class="sos-waves wave-3"></div>
+                        <span>SOS</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Barra de Navegación Inferior -->
+            <div class="nav-bar">
+                <button class="nav-btn" id="nav-back">
+                    <svg viewBox="0 0 448 512" fill="currentColor"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                </button>
+                <button class="nav-btn" id="nav-home">
+                    <svg viewBox="0 0 576 512" fill="currentColor"><path d="M280.4 14.8c10.4-11.8 28.8-11.8 39.2 0l248 281c9.3 10.5 8.3 26.6-2.2 35.9s-26.6 8.3-35.9-2.2L512 310V464c0 26.5-21.5 48-48 48H352c-26.5 0-48-21.5-48-48V336c0-8.8-7.2-16-16-16H288c-8.8 0-16 7.2-16 16V464c0 26.5-21.5 48-48 48H112c-26.5 0-48-21.5-48-48V310L46.5 329.5c-9.3 10.5-25.4 11.5-35.9 2.2s-11.5-25.4-2.2-35.9l248-281z"/></svg>
+                </button>
+                <button class="nav-btn" id="nav-settings">
+                    <svg viewBox="0 0 512 512" fill="currentColor"><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal de confirmación para llamadas -->
+    <div class="modal-overlay" id="call-modal">
+        <div class="modal-content">
+            <h2 id="modal-title">¿Llamar a familiares?</h2>
+            <p id="modal-desc">Se abrirá la aplicación de teléfono.</p>
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-cancel" id="modal-cancel">Cancelar</button>
+                <button class="modal-btn modal-btn-confirm" id="modal-confirm">Llamar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
